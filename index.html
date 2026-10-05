@@ -228,9 +228,27 @@
             border: 4px solid var(--accent);
         }
 
+        button.btn-secondary { font-family: inherit; cursor: pointer; }
+        .rules-modal { display: none; position: fixed; inset: 0; z-index: 2000; align-items: center; justify-content: center; padding: 20px; }
+        .rules-modal.open { display: flex; }
+        .rules-modal-backdrop { position: absolute; inset: 0; background: rgba(26, 26, 46, 0.75); backdrop-filter: blur(4px); }
+        .rules-modal-content { position: relative; background: #fff; border-radius: 20px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 45px 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.35); animation: modalPop 0.35s ease; }
+        @keyframes modalPop { from { opacity: 0; transform: translateY(30px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .rules-modal-close { position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border: none; border-radius: 50%; background: var(--light); color: var(--primary); font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; }
+        .rules-modal-close:hover { background: var(--primary); color: #fff; transform: rotate(90deg); }
+        .rules-modal-header { text-align: center; margin-bottom: 30px; }
+        .rules-modal-header .rules-icon { width: 70px; height: 70px; background: var(--gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; color: #fff; font-size: 1.7rem; }
+        .rules-modal-header h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 8px; }
+        .rules-modal-header p { color: #666; font-size: 0.95rem; }
+        .rules-list { display: flex; flex-direction: column; gap: 15px; }
+        .rule-item { display: flex; gap: 16px; align-items: flex-start; background: var(--light); border-left: 5px solid var(--accent); border-radius: 12px; padding: 18px 20px; transition: all 0.3s ease; }
+        .rule-item:hover { background: #fff3cd; transform: translateX(6px); }
+        .rule-number { min-width: 36px; height: 36px; border-radius: 50%; background: var(--gradient); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.05rem; }
+        .rule-text { color: #444; font-size: 1rem; line-height: 1.6; }
+        .rule-text strong { color: var(--primary); }
+
         @media (max-width: 768px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .hero-text h1 { font-size: 2rem; } .hero-features { align-items: center; } .hero-cta { justify-content: center; } .form-row { grid-template-columns: 1fr; } .section-header h2 { font-size: 1.8rem; } .jobs-grid { grid-template-columns: 1fr; } .senior-banner { padding: 30px 20px; } .form-container { padding: 30px 20px; } }
     </style>
-<base target="_blank">
 <base target="_blank">
 <base target="_blank">
 </head>
@@ -343,6 +361,16 @@
                         <span class="lang-content" data-lang="th">ดูตำแหน่งงาน</span>
                         <span class="lang-content" data-lang="vn">Xem Công Việc</span>
                     </a>
+                    <button type="button" class="btn-secondary" onclick="openRulesModal()" style="font-family:inherit;">
+                        <i class="fas fa-file-invoice"></i>
+                        <span class="lang-content" data-lang="en">Recruitment Rules & Employment Conditions</span>
+                        <span class="lang-content active" data-lang="jp">採用ルール・勤務条件</span>
+                        <span class="lang-content" data-lang="fil">Mga Patakaran sa Pagkuha at Kondisyon sa Trabaho</span>
+                        <span class="lang-content" data-lang="np">भर्ना नियम तथा कामका सर्तहरू</span>
+                        <span class="lang-content" data-lang="si">බඳවා ගැනීමේ නීති සහ සේවා කොන්දේසි</span>
+                        <span class="lang-content" data-lang="th">กฎการรับสมัครและเงื่อนไขการทำงาน</span>
+                        <span class="lang-content" data-lang="vn">Quy Tắc Tuyển Dụng & Điều Kiện Làm Việc</span>
+                    </button>
                 </div>
             </div>
 
@@ -1416,6 +1444,15 @@
                     <span class="lang-content" data-lang="th">สมัครเลย</span>
                     <span class="lang-content" data-lang="vn">Ứng Tuyển Ngay</span>
                 </a></p>
+                <p><a href="javascript:void(0)" onclick="openRulesModal()">
+                    <span class="lang-content" data-lang="en">Recruitment Rules & Employment Conditions</span>
+                    <span class="lang-content active" data-lang="jp">採用ルール・勤務条件</span>
+                    <span class="lang-content" data-lang="fil">Mga Patakaran sa Pagkuha at Kondisyon sa Trabaho</span>
+                    <span class="lang-content" data-lang="np">भर्ना नियम तथा कामका सर्तहरू</span>
+                    <span class="lang-content" data-lang="si">බඳවා ගැනීමේ නීති සහ සේවා කොන්දේසි</span>
+                    <span class="lang-content" data-lang="th">กฎการรับสมัครและเงื่อนไขการทำงาน</span>
+                    <span class="lang-content" data-lang="vn">Quy Tắc Tuyển Dụng & Điều Kiện Làm Việc</span>
+                </a></p>
                 <p><a href="#home">
                     <span class="lang-content" data-lang="en">Back to Top</span>
                     <span class="lang-content active" data-lang="jp">ページトップへ</span>
@@ -1445,6 +1482,88 @@
             <p>© 2026 Keiyo Hotel Service Co., Ltd. All Rights Reserved. | 京葉ホテルサービス株式会社</p>
         </div>
     </footer>
+
+        <div class="rules-modal" id="rulesModal">
+        <div class="rules-modal-backdrop" onclick="closeRulesModal()"></div>
+        <div class="rules-modal-content">
+            <button type="button" class="rules-modal-close" onclick="closeRulesModal()"><i class="fas fa-times"></i></button>
+            <div class="rules-modal-header">
+                <div class="rules-icon"><i class="fas fa-file-invoice"></i></div>
+                <h3>
+                    <span class="lang-content" data-lang="en">Recruitment Rules & Employment Conditions</span>
+                    <span class="lang-content active" data-lang="jp">採用ルール・勤務条件</span>
+                    <span class="lang-content" data-lang="fil">Mga Patakaran sa Pagkuha at Kondisyon sa Trabaho</span>
+                    <span class="lang-content" data-lang="np">भर्ना नियम तथा कामका सर्तहरू</span>
+                    <span class="lang-content" data-lang="si">බඳවා ගැනීමේ නීති සහ සේවා කොන්දේසි</span>
+                    <span class="lang-content" data-lang="th">กฎการรับสมัครและเงื่อนไขการทำงาน</span>
+                    <span class="lang-content" data-lang="vn">Quy Tắc Tuyển Dụng & Điều Kiện Làm Việc</span>
+                </h3>
+                <p>
+                    <span class="lang-content" data-lang="en">Please check the important recruitment rules and employment conditions</span>
+                    <span class="lang-content active" data-lang="jp">採用に関する重要なルールと勤務条件をご確認ください</span>
+                    <span class="lang-content" data-lang="fil">Pakitingnan ang mahahalagang patakaran sa pagkuha at mga kondisyon sa trabaho</span>
+                    <span class="lang-content" data-lang="np">कृपया भर्ना सम्बन्धी महत्वपूर्ण नियम तथा कामका सर्तहरू हेर्नुहोस्</span>
+                    <span class="lang-content" data-lang="si">කරුණාකර බඳවා ගැනීමේ වැදගත් නීති සහ සේවා කොන්දේසි පරීක්ෂා කරන්න</span>
+                    <span class="lang-content" data-lang="th">กรุณาตรวจสอบกฎสำคัญเกี่ยวกับการรับสมัครและเงื่อนไขการทำงาน</span>
+                    <span class="lang-content" data-lang="vn">Vui lòng xem các quy tắc tuyển dụng và điều kiện làm việc quan trọng</span>
+                </p>
+            </div>
+
+            <div class="rules-list">
+                <div class="rule-item">
+                    <div class="rule-number">1</div>
+                    <div class="rule-text">
+                        <span class="lang-content" data-lang="en">You <strong>must have a bank account</strong> to receive your salary</span>
+                        <span class="lang-content active" data-lang="jp">給与を受け取るには<strong>銀行口座が必要</strong>です</span>
+                        <span class="lang-content" data-lang="fil">Kailangan mo ng <strong>bank account</strong> para matanggap ang iyong sahod</span>
+                        <span class="lang-content" data-lang="np">तलब प्राप्त गर्न <strong>बैंक खाता हुनु आवश्यक</strong> छ</span>
+                        <span class="lang-content" data-lang="si">වැටුප ලබා ගැනීමට <strong>බැංකු ගිණුමක්</strong> අවශ්‍ය වේ</span>
+                        <span class="lang-content" data-lang="th">คุณต้องมี<strong>บัญชีธนาคาร</strong>เพื่อรับเงินเดือน</span>
+                        <span class="lang-content" data-lang="vn">Bạn <strong>phải có tài khoản ngân hàng</strong> để nhận lương</span>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-number">2</div>
+                    <div class="rule-text">
+                        <span class="lang-content" data-lang="en">Salary is paid monthly by <strong>bank transfer</strong> to your account</span>
+                        <span class="lang-content active" data-lang="jp">給与は毎月<strong>銀行口座に振り込み</strong>で支払われます</span>
+                        <span class="lang-content" data-lang="fil">Ang sahod ay binabayaran buwanan sa pamamagitan ng <strong>bank transfer</strong> sa iyong account</span>
+                        <span class="lang-content" data-lang="np">तलब मासिक रूपमा <strong>बैंक स्थानान्तरण</strong> मार्फत भुक्तानी गरिन्छ</span>
+                        <span class="lang-content" data-lang="si">වැටුප මාසිකව <strong>බැංකු ගිණුමට බැර කිරීමෙන්</strong> ගෙවනු ලැබේ</span>
+                        <span class="lang-content" data-lang="th">เงินเดือนจ่ายเป็นรายเดือนโดย<strong>โอนเข้าบัญชีธนาคาร</strong>ของคุณ</span>
+                        <span class="lang-content" data-lang="vn">Lương được trả hàng tháng bằng <strong>chuyển khoản ngân hàng</strong> vào tài khoản của bạn</span>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-number">3</div>
+                    <div class="rule-text">
+                        <span class="lang-content" data-lang="en">If you work <strong>20+ hours per week</strong>, <strong>social insurance</strong> premiums are deducted from your salary</span>
+                        <span class="lang-content active" data-lang="jp"><strong>週20時間以上</strong>働く場合、<strong>社会保険料</strong>が給与から控除されます</span>
+                        <span class="lang-content" data-lang="fil">Kung magtrabaho ka ng <strong>20+ oras bawat linggo</strong>, ang <strong>social insurance</strong> premium ay ibabawas mula sa iyong sahod</span>
+                        <span class="lang-content" data-lang="np"><strong>हप्तामा २० घण्टाभन्दा बढी</strong> काम गरेमा, <strong>सामाजिक बीमा</strong> शुल्क तलबबाट कटौती गरिन्छ</span>
+                        <span class="lang-content" data-lang="si">සතියකට <strong>පැය 20කට වැඩි</strong> කාලයක් වැඩ කළහොත්, <strong>සමාජ රක්ෂණ</strong> ගාස්තු වැටුපෙන් අඩු කෙරේ</span>
+                        <span class="lang-content" data-lang="th">หากทำงาน <strong>20 ชั่วโมงขึ้นไปต่อสัปดาห์</strong> <strong>เบี้ยประกันสังคม</strong>จะถูกหักจากเงินเดือน</span>
+                        <span class="lang-content" data-lang="vn">Nếu làm việc <strong>từ 20 giờ/tuần trở lên</strong>, phí <strong>bảo hiểm xã hội</strong> sẽ được khấu trừ từ lương</span>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-number">4</div>
+                    <div class="rule-text">
+                        <span class="lang-content" data-lang="en">Because we provide <strong>social insurance</strong>, we offer a <strong>high hourly wage</strong></span>
+                        <span class="lang-content active" data-lang="jp"><strong>社会保険</strong>に加入する分、当社では<strong>高時給</strong>でお支払いしています</span>
+                        <span class="lang-content" data-lang="fil">Dahil nagbibigay kami ng <strong>social insurance</strong>, nag-aalok kami ng <strong>mataas na hourly wage</strong></span>
+                        <span class="lang-content" data-lang="np">हामी <strong>सामाजिक बीमा</strong> प्रदान गर्ने भएकाले, <strong>उच्च प्रति घण्टा तलब</strong> प्रदान गर्छौं</span>
+                        <span class="lang-content" data-lang="si">අපි <strong>සමාජ රක්ෂණය</strong> ලබා දෙන බැවින්, <strong>වැඩි පැයක වැටුපක්</strong> ගෙවමු</span>
+                        <span class="lang-content" data-lang="th">เนื่องจากเรามี<strong>ประกันสังคม</strong> เราจึงจ่าย<strong>ค่าแรงรายชั่วโมงที่สูง</strong></span>
+                        <span class="lang-content" data-lang="vn">Vì chúng tôi cung cấp <strong>bảo hiểm xã hội</strong>, chúng tôi trả <strong>lương theo giờ cao</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <a href="#apply" class="fab" title="Apply Now">
         <i class="fas fa-pen"></i>
@@ -1536,6 +1655,18 @@
             lastScroll = currentScroll;
         });
 
+        function openRulesModal() {
+            document.getElementById('rulesModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeRulesModal() {
+            document.getElementById('rulesModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeRulesModal();
+        });
+
         // Initialize Japanese as default language on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Set Japanese as default
@@ -1594,4 +1725,4 @@
     }
     </script>
 </body>
-</html><!DOCTYPE html>
+</html>      
