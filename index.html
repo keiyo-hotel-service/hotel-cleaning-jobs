@@ -247,8 +247,20 @@
         .rule-text { color: #444; font-size: 1rem; line-height: 1.6; }
         .rule-text strong { color: var(--primary); }
 
+        .seasonal-section { background: linear-gradient(135deg, #fff9e6 0%, #ffefd5 100%); border-radius: 25px; padding: 50px; margin-top: 50px; border: 3px solid var(--accent); position: relative; overflow: hidden; }
+        .seasonal-section::before { content: '\26C4'; position: absolute; font-size: 7rem; opacity: 0.08; right: 10px; top: -10px; }
+        .seasonal-badge { display: inline-flex; align-items: center; gap: 8px; background: #e74c3c; color: #fff; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; margin-bottom: 20px; animation: pulse 2s infinite; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); }
+        .seasonal-section h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 10px; }
+        .seasonal-wage { font-size: 3rem; color: #e74c3c; font-weight: 700; line-height: 1.1; }
+        .seasonal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 30px 0; }
+        .seasonal-item { display: flex; align-items: flex-start; gap: 12px; background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-left: 4px solid var(--accent); }
+        .seasonal-item i { color: var(--secondary); margin-top: 3px; width: 20px; }
+        .seasonal-note { background: rgba(231, 76, 60, 0.08); border: 1px dashed #e74c3c; border-radius: 12px; padding: 18px 22px; color: #c0392b; font-size: 0.95rem; margin-top: 15px; }
+        .seasonal-wage-box { background: #fff; border: 2px solid #e74c3c; border-radius: 15px; padding: 20px 30px; display: inline-block; box-shadow: 0 8px 25px rgba(231, 76, 60, 0.15); }
+
         @media (max-width: 768px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .hero-text h1 { font-size: 2rem; } .hero-features { align-items: center; } .hero-cta { justify-content: center; } .form-row { grid-template-columns: 1fr; } .section-header h2 { font-size: 1.8rem; } .jobs-grid { grid-template-columns: 1fr; } .senior-banner { padding: 30px 20px; } .form-container { padding: 30px 20px; } }
     </style>
+<base target="_blank">
 <base target="_blank">
 <base target="_blank">
 </head>
@@ -606,7 +618,86 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-bottom: 40px;"><img src="https://ts1.mm.bing.net/th?id=OIP.7E36FuqoM97ChBgddj5VZgHaJZ&pid=15.1&o=7&rm=3" alt="掃除カート" class="section-image"></div>
+                        <!-- ===================== 年末限定：ベッドメイク短期アルバイト ===================== -->
+            <div class="seasonal-section fade-in" id="seasonal">
+                <div class="seasonal-badge">
+                    <i class="fas fa-snowflake"></i>
+                    <span class="lang-content" data-lang="en">&#9203; Year-End Limited Recruitment!</span><span class="lang-content active" data-lang="jp">&#9203; 年末期間限定 募集中！</span><span class="lang-content" data-lang="fil">&#9203; Year-End Limited Recruitment!</span><span class="lang-content" data-lang="np">&#9203; वर्षअन्त सीमित भर्ना!</span><span class="lang-content" data-lang="si">&#9203; වසර අවසානයේ සීමිත බඳවා ගැනීමක්!</span><span class="lang-content" data-lang="th">&#9203; รับสมัครเฉพาะช่วงปลายปี!</span><span class="lang-content" data-lang="vn">&#9203; Tuyển Dụng Giới Hạn Cuối Năm!</span>
+                </div>
+
+                <h3>
+                    <span class="lang-content" data-lang="en">Short-Term Part-Time Staff for the Year-End Period</span><span class="lang-content active" data-lang="jp">年末繁忙期 短期アルバイト（ベッドメイク専任）</span><span class="lang-content" data-lang="fil">Maikling Panahong Part-Time para sa Year-End Period</span><span class="lang-content" data-lang="np">वर्षअन्त अवधिका लागि छोटो अवधिको अंशकालिक कर्मचारी</span><span class="lang-content" data-lang="si">වසර අවසාන කාලය සඳහා කෙටි කාලීන අර්ධකාලීන සේවකයින්</span><span class="lang-content" data-lang="th">พนักงานพาร์ทไทม์ระยะสั้นสำหรับช่วงสิ้นปี</span><span class="lang-content" data-lang="vn">Nhân Viên Bán Thời Gian Ngắn Hạn Cho Giai Đoạn Cuối Năm</span>
+                </h3>
+                <p style="color:#555; max-width:800px;">
+                    <span class="lang-content" data-lang="en">Bed making duty only. Open to all genders &#8212; mainly aimed at students.</span><span class="lang-content active" data-lang="jp">ベッドメイクのみの業務。男女問わず、主に学生の方を対象としています。</span><span class="lang-content" data-lang="fil">Gawaing pagaayos ng kama lamang. Bukas sa lahat ng kasarian &#8212; pangunahing para sa mga estudyante.</span><span class="lang-content" data-lang="np">बेड मिलाउने काम मात्र। सबै लिङ्गका लागि खुला &#8212; मुख्य रूपमा विद्यार्थीहरूको लागि।</span><span class="lang-content" data-lang="si">ඇඳ සකස් කිරීමේ (Bed Make) රාජකාරිය පමණි. ස්ත්‍රී / පුරුෂ භේදයකින් තොරව &#8212; ප්‍රධාන වශයෙන් සිසුන් සඳහායි.</span><span class="lang-content" data-lang="th">หน้าที่จัดเตียงเท่านั้น ไม่จำกัดเพศ &#8212; เน้นนักเรียนนักศึกษาเป็นหลัก</span><span class="lang-content" data-lang="vn">Chỉ làm công việc trải giường. Mọi giới tính &#8212; chủ yếu dành cho sinh viên.</span>
+                </p>
+
+                <div style="margin: 25px 0;">
+                    <div class="seasonal-wage-box">
+                        <div class="seasonal-wage">&#165;1,800</div>
+                        <div style="color:#666; font-size:0.95rem;">
+                            <span class="lang-content" data-lang="en">per hour</span><span class="lang-content active" data-lang="jp">時給</span><span class="lang-content" data-lang="fil">bawat oras</span><span class="lang-content" data-lang="np">प्रति घण्टा</span><span class="lang-content" data-lang="si">පැයකට</span><span class="lang-content" data-lang="th">ต่อชั่วโมง</span><span class="lang-content" data-lang="vn">mỗi giờ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seasonal-grid">
+                    <div class="seasonal-item">
+                        <i class="fas fa-bed"></i>
+                        <div>
+                            <strong><span class="lang-content" data-lang="en">Duties</span><span class="lang-content active" data-lang="jp">業務内容</span><span class="lang-content" data-lang="fil">Tungkulin</span><span class="lang-content" data-lang="np">कर्तव्यहरू</span><span class="lang-content" data-lang="si">රාජකාරිය</span><span class="lang-content" data-lang="th">หน้าที่</span><span class="lang-content" data-lang="vn">Nhiệm Vụ</span></strong><br>
+                            <span class="lang-content" data-lang="en">Bed making only</span><span class="lang-content active" data-lang="jp">ベッドメイクのみ</span><span class="lang-content" data-lang="fil">Pagaayos ng kama lamang</span><span class="lang-content" data-lang="np">बेड मिलाउने मात्र</span><span class="lang-content" data-lang="si">ඇඳ සකස් කිරීම (Bed Make) පමණක්</span><span class="lang-content" data-lang="th">จัดเตียงเท่านั้น</span><span class="lang-content" data-lang="vn">Chỉ trải giường</span>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong><span class="lang-content" data-lang="en">Daily Hours</span><span class="lang-content active" data-lang="jp">1日の勤務時間</span><span class="lang-content" data-lang="fil">Oras ng Trabaho Kada Araw</span><span class="lang-content" data-lang="np">दैनिक कामको समय</span><span class="lang-content" data-lang="si">දිනක වැඩ කරන කාලය</span><span class="lang-content" data-lang="th">ชั่วโมงทำงานต่อวัน</span><span class="lang-content" data-lang="vn">Giờ Làm Mỗi Ngày</span></strong><br>
+                            <span class="lang-content" data-lang="en">5 hours per day (even if extended, max 5.5 hours)</span><span class="lang-content active" data-lang="jp">1日5時間（延長しても最大5.5時間まで）</span><span class="lang-content" data-lang="fil">5 oras bawat araw (kahit pahaba, max 5.5 oras)</span><span class="lang-content" data-lang="np">दैनिक ५ घण्टा (लम्ब्याए पनि अधिकतम ५.५ घण्टा)</span><span class="lang-content" data-lang="si">දිනකට පැය 5ක් (දිගු කළද උපරිම පැය 5.5 දක්වා)</span><span class="lang-content" data-lang="th">วันละ 5 ชั่วโมง (แม้มีการต่อเวลา สูงสุด 5.5 ชั่วโมง)</span><span class="lang-content" data-lang="vn">5 giờ mỗi ngày (kéo dài cũng tối đa 5.5 giờ)</span>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <i class="fas fa-calendar-week"></i>
+                        <div>
+                            <strong><span class="lang-content" data-lang="en">Weekly Maximum</span><span class="lang-content active" data-lang="jp">週の上限</span><span class="lang-content" data-lang="fil">Pinakamaraming Oras sa Isang Linggo</span><span class="lang-content" data-lang="np">साप्ताहिक अधिकतम</span><span class="lang-content" data-lang="si">සතියක උපරිමය</span><span class="lang-content" data-lang="th">สูงสุดต่อสัปดาห์</span><span class="lang-content" data-lang="vn">Tối Đa Mỗi Tuần</span></strong><br>
+                            <span class="lang-content" data-lang="en">Maximum 19 hours per week</span><span class="lang-content active" data-lang="jp">週最大19時間まで</span><span class="lang-content" data-lang="fil">Pinakamataas 19 oras bawat linggo</span><span class="lang-content" data-lang="np">हप्तामा अधिकतम १९ घण्टा</span><span class="lang-content" data-lang="si">සතියකට උපරිම වැඩ කරන කාලය පැය 19</span><span class="lang-content" data-lang="th">สูงสุด 19 ชั่วโมงต่อสัปดาห์</span><span class="lang-content" data-lang="vn">Tối đa 19 giờ mỗi tuần</span>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <i class="fas fa-coffee"></i>
+                        <div>
+                            <strong><span class="lang-content" data-lang="en">Break Time</span><span class="lang-content active" data-lang="jp">休憩時間</span><span class="lang-content" data-lang="fil">Pahinga</span><span class="lang-content" data-lang="np">ब्रेक समय</span><span class="lang-content" data-lang="si">විවේක කාලය</span><span class="lang-content" data-lang="th">เวลาพัก</span><span class="lang-content" data-lang="vn">Giờ Nghỉ Giải Lao</span></strong><br>
+                            <span class="lang-content" data-lang="en">1 hour</span><span class="lang-content active" data-lang="jp">1時間</span><span class="lang-content" data-lang="fil">1 oras</span><span class="lang-content" data-lang="np">१ घण्टा</span><span class="lang-content" data-lang="si">පැය 1</span><span class="lang-content" data-lang="th">1 ชั่วโมง</span><span class="lang-content" data-lang="vn">1 giờ</span>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <i class="fas fa-bus"></i>
+                        <div>
+                            <strong><span class="lang-content" data-lang="en">Transportation</span><span class="lang-content active" data-lang="jp">交通費</span><span class="lang-content" data-lang="fil">Transportasyon</span><span class="lang-content" data-lang="np">यातायात</span><span class="lang-content" data-lang="si">ප්‍රවාහනය</span><span class="lang-content" data-lang="th">ค่าเดินทาง</span><span class="lang-content" data-lang="vn">Đi Lại</span></strong><br>
+                            <span class="lang-content" data-lang="en">Transportation costs fully covered</span><span class="lang-content active" data-lang="jp">交通費全額支給</span><span class="lang-content" data-lang="fil">Buong gastos sa transportasyon ay sasagutin</span><span class="lang-content" data-lang="np">यातायात खर्च पूर्ण रूपमा भुक्तानी गरिन्छ</span><span class="lang-content" data-lang="si">ප්‍රවාහන වියදම් සම්පූර්ණයෙන්ම ගෙවනු ලැබේ</span><span class="lang-content" data-lang="th">ค่าเดินทางจ่ายเต็มจำนวน</span><span class="lang-content" data-lang="vn">Chi phí đi lại được trả đầy đủ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seasonal-note">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span class="lang-content" data-lang="en">No performance-based pay (歩合給). No social insurance (社会保険) or additional benefits.</span><span class="lang-content active" data-lang="jp">歩合給なし。社会保険（社会保険）を含む追加の福利厚生はありません。</span><span class="lang-content" data-lang="fil">Walang performance-based pay (歩合給). Walang social insurance (社会保険) o karagdagang benepisyo.</span><span class="lang-content" data-lang="np">प्रदर्शन आधारित तलब (歩合給) छैन। सामाजिक बीमा (社会保険) सहित थप लाभहरू छैनन्।</span><span class="lang-content" data-lang="si">කාර්යසාධන දීමනා (歩合給) නොමැත. සමාජ රක්ෂණය (社会保険) ඇතුළු අමතර ප්‍රතිලාභ නොමැත.</span><span class="lang-content" data-lang="th">ไม่มีค่าแรงตามผลงาน (歩合給) ไม่มีประกันสังคม (社会保険) และสวัสดิการเพิ่มเติม</span><span class="lang-content" data-lang="vn">Không có lương theo hiệu suất (歩合給). Không có bảo hiểm xã hội (社会保険) hay phúc lợi bổ sung.</span>
+                </div>
+
+                <div class="seasonal-note" style="background: rgba(45,90,135,0.08); border-color: var(--secondary); color: var(--primary);">
+                    <i class="fas fa-comments"></i>
+                    <span class="lang-content" data-lang="en">If you wish to switch to housekeeping / maid (room cleaning) duties, we can discuss it &#8212; however, the conditions and benefits of regular maid employees cannot be applied as-is.</span><span class="lang-content active" data-lang="jp">ハウスキーピング／メイド（客室清掃）業務に移行したい場合は相談可能ですが、レギュラーメイド従業員の条件や福利厚生をそのまま適用することはできません。</span><span class="lang-content" data-lang="fil">Kung nais mong lumipat sa housekeeping / maid (paglilinis ng kwarto) duties, maaari nating pag-usapan &#8212; gayunpaman, ang mga kondisyon at benepisyo ng regular na maid employees ay hindi maaaring ilapat nang diretso.</span><span class="lang-content" data-lang="np">हाउसकीपिंग / मेड (कोठा सफाइ) काममा सर्न चाहनुहुन्छ भने छलफल गर्न सकिन्छ &#8212; तर नियमित मेड कर्मचारीका सर्त र लाभहरू यसै गरी लागू गर्न सकिँदैन।</span><span class="lang-content" data-lang="si">හවුස්කීපිං / මෙයිඩ් (කාමර පිරිසිදු කිරීමේ) කටයුතු වලට මාරු වීමට කැමති නම් සාකච්ඡා කළ හැක, නමුත් නිත්‍ය මෙයිඩ් සේවකයින්ට අදාළ කොන්දේසි සහ ප්‍රතිලාභ ඒ ආකාරයෙන්ම ලබා දිය නොහැක.</span><span class="lang-content" data-lang="th">หากต้องการย้ายไปทำงานแม่บ้าน / เมด (ทำความสะอาดห้องพัก) เรายินดีปรึกษากัน &#8212; อย่างไรก็ตาม เงื่อนไขและสวัสดิการของพนักงานเมดประจำไม่สามารถใช้ได้ตามเดิม</span><span class="lang-content" data-lang="vn">Nếu bạn muốn chuyển sang công việc housekeeping / maid (dọn phòng), chúng tôi có thể thương lượng &#8212; tuy nhiên, các điều kiện và phúc lợi của nhân viên maid thường xuyên không thể áp dụng nguyên trạng.</span>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <a href="#apply" class="btn-primary" style="font-size: 1rem; padding: 14px 34px;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="lang-content" data-lang="en">Apply for Year-End Position</span><span class="lang-content active" data-lang="jp">年末勤務に応募する</span><span class="lang-content" data-lang="fil">Mag-apply sa Year-End Position</span><span class="lang-content" data-lang="np">वर्षअन्त स्थानका लागि आवेदन गर्नुहोस्</span><span class="lang-content" data-lang="si">වසර අවසාන සේවා ස්ථානයට අයදුම් කරන්න</span><span class="lang-content" data-lang="th">สมัครตำแหน่งช่วงปลายปี</span><span class="lang-content" data-lang="vn">Ứng Tuyển Vị Trí Cuối Năm</span>
+                    </a>
+                </div>
+            </div>
+
+<div style="text-align: center; margin-bottom: 40px;"><img src="https://ts1.mm.bing.net/th?id=OIP.7E36FuqoM97ChBgddj5VZgHaJZ&pid=15.1&o=7&rm=3" alt="掃除カート" class="section-image"></div>
             <div class="senior-banner fade-in">
                 <h3><i class="fas fa-heart"></i> 
                     <span class="lang-content" data-lang="en">Ages 60 and Over Are Especially Welcome!</span>
@@ -1064,6 +1155,7 @@
                             <option value="room_meister">Room Meister (¥1,300/hr)</option>
                             <option value="room_cleaning_staff">Room Cleaning Staff (¥1,140/hr)</option>
                             <option value="either">Either position is fine</option>
+                            <option value="year_end_bedmake">Year-End Limited: Bed Make Staff (¥1,800/hr)</option>
                         </select>
                     </div>
 
@@ -1435,6 +1527,7 @@
                     <span class="lang-content" data-lang="th">ตำแหน่งงานที่เปิดรับ</span>
                     <span class="lang-content" data-lang="vn">Vị Trí Tuyển Dụng</span>
                 </a></p>
+                <p><a href="#seasonal"><span class="lang-content" data-lang="en">Year-End Limited Position</span><span class="lang-content active" data-lang="jp">年末限定アルバイト</span><span class="lang-content" data-lang="fil">Year-End Position</span><span class="lang-content" data-lang="np">वर्षअन्त सीमित पद</span><span class="lang-content" data-lang="si">වසර අවසාන සීමිත තනතුර</span><span class="lang-content" data-lang="th">ตำแหน่งช่วงปลายปี</span><span class="lang-content" data-lang="vn">Vị Trí Cuối Năm</span></a></p>
                 <p><a href="#apply">
                     <span class="lang-content" data-lang="en">Apply Now</span>
                     <span class="lang-content active" data-lang="jp">今すぐ応募</span>
@@ -1724,5 +1817,43 @@
         "jobBenefits": "Social insurance (3+ days/week, 20+ hrs/week), transportation allowance for all employees"
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Year-End Short-Term Bed Make Staff - Narita City",
+        "description": "Short-term part-time bed making staff for the year-end busy period in Narita City, Chiba. Mainly for students, all genders welcome. Hourly wage 1,800 yen. 5 hours per day (max 5.5), up to 19 hours per week, 1 hour break. Transportation fully covered. No social insurance or additional benefits.",
+        "datePosted": "2026-10-13",
+        "validThrough": "2026-12-31",
+        "employmentType": ["PART_TIME", "TEMPORARY"],
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Keiyo Hotel Service Co., Ltd.",
+            "sameAs": "https://keiyo-hs.com"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Narita City",
+                "addressRegion": "Chiba",
+                "addressCountry": "JP"
+            }
+        },
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "JPY",
+            "value": {
+                "@type": "QuantitativeValue",
+                "value": 1800,
+                "unitText": "HOUR"
+            }
+        },
+        "experienceRequirements": "No experience required",
+        "workHours": "5 hours per day (max 5.5), up to 19 hours per week, 1 hour break",
+        "jobBenefits": "Transportation costs fully covered"
+    }
+    </script>
 </body>
-</html>      
+</html>
